@@ -62,6 +62,13 @@ void DanhSachNV::TuoiCaoNhat() const
 
     cout << "\nNhan vien co tuoi cao nhat:\n";
     lonTuoiNhat.Xuat();
+    for (int i = 0; i < ds.size(); i++)
+    {
+        if (ds[i].getNgaySinh() == lonTuoiNhat.getNgaySinh())
+        {
+            ds[i].Xuat();
+        }
+    }
 }
 
 // Sắp xếp danh sách nhân viên theo lương tăng dần
