@@ -61,7 +61,6 @@ void DanhSachNV::TuoiCaoNhat() const
     }
 
     cout << "\nNhan vien co tuoi cao nhat:\n";
-    lonTuoiNhat.Xuat();
     for (int i = 0; i < ds.size(); i++)
     {
         if (ds[i].getNgaySinh() == lonTuoiNhat.getNgaySinh())
@@ -77,5 +76,3 @@ void DanhSachNV::SapXepTangTheoLuong() {
         return a.TinhLuong() < b.TinhLuong();
     });
 }
-
-
