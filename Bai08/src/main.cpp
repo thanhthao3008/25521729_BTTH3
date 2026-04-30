@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    DanhSachNV ds;
+    DSNhanVienSX ds;
     ds.Nhap();
     cout << "\nDanh sach nhan vien:\n";
     ds.Xuat();

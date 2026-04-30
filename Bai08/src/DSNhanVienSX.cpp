@@ -1,8 +1,14 @@
 #include "DSNhanVienSX.h"
 using namespace std;
 
+//Constructor mặc định
+DSNhanVienSX::DSNhanVienSX()
+{
+    ds.clear();
+}
+
 // Nhập danh sách Nhân Viên
-void DanhSachNV::Nhap() {
+void DSNhanVienSX::Nhap() {
     int n;
     cout << "Nhap so nhan vien(> 0): ";
     cin >> n;
@@ -20,14 +26,14 @@ void DanhSachNV::Nhap() {
 }
 
 // Xuất danh sách Nhân viên
-void DanhSachNV::Xuat() const {
+void DSNhanVienSX::Xuat() const {
     for (auto nv : ds) {
         nv.Xuat();
     }
 }
 
 // Xuất ra Nhân Viên có Lương thấp nhất
-void DanhSachNV::LuongThapNhat() const {
+void DSNhanVienSX::LuongThapNhat() const {
     double minLuong = ds[0].TinhLuong();
     for (auto nv : ds) {
         if (nv.TinhLuong() < minLuong)
@@ -41,7 +47,7 @@ void DanhSachNV::LuongThapNhat() const {
 }
 
 // Tổng lương của các Nhân Viên
-double DanhSachNV::TongLuong() const {
+double DSNhanVienSX::TongLuong() const {
     double sum = 0;
     for (auto nv : ds) {
         sum += nv.TinhLuong();
@@ -50,7 +56,7 @@ double DanhSachNV::TongLuong() const {
 }
 
 // Tìm và xuất nhân viên có tuổi cao nhất (người sinh sớm nhất)
-void DanhSachNV::TuoiCaoNhat() const
+void DSNhanVienSX::TuoiCaoNhat() const
 {
     cNhanVienSX lonTuoiNhat = ds[0];
 
@@ -71,7 +77,7 @@ void DanhSachNV::TuoiCaoNhat() const
 }
 
 // Sắp xếp danh sách nhân viên theo lương tăng dần
-void DanhSachNV::SapXepTangTheoLuong() {
+void DSNhanVienSX::SapXepTangTheoLuong() {
     sort(ds.begin(), ds.end(), [](cNhanVienSX a, cNhanVienSX b) {
         return a.TinhLuong() < b.TinhLuong();
     });
